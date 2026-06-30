@@ -3,63 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>VS Code MD Theme Picker</title>
     <style>
-        /* Frosted Glass Theme */
         :root {
-            --bg-page: #f8fafc;
-            --bg-spot-1: rgba(14, 165, 233, 0.10);
-            --bg-spot-2: rgba(99, 102, 241, 0.08);
+            --bg-page: #f1f5f9;
+            --bg-spot-1: rgba(14, 165, 233, 0.12);
+            --bg-spot-2: rgba(99, 102, 241, 0.10);
             --bg-spot-3: rgba(168, 85, 247, 0.06);
 
-            --glass-bg: rgba(255, 255, 255, 0.72);
-            --glass-bg-strong: rgba(255, 255, 255, 0.86);
-            --glass-border: rgba(148, 163, 184, 0.22);
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-bg-strong: rgba(255, 255, 255, 0.88);
+            --glass-border: rgba(148, 163, 184, 0.25);
             --glass-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
             --glass-shadow-soft: 0 6px 18px rgba(15, 23, 42, 0.05);
             --glass-blur: saturate(180%) blur(14px);
 
             --accent: #0ea5e9;
             --accent-strong: #2563eb;
-            --accent-soft: rgba(14, 165, 233, 0.12);
+            --accent-soft: rgba(14, 165, 233, 0.10);
 
             --text-main: #1e293b;
             --text-muted: #475569;
             --text-faint: #64748b;
+
+            --success: #10b981;
+            --purple: #8b5cf6;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             min-height: 100vh;
             background:
-                radial-gradient(circle at 20% 20%, var(--bg-spot-1), transparent 40%),
-                radial-gradient(circle at 80% 30%, var(--bg-spot-2), transparent 35%),
-                radial-gradient(circle at 50% 80%, var(--bg-spot-3), transparent 40%),
+                radial-gradient(circle at 15% 15%, var(--bg-spot-1), transparent 40%),
+                radial-gradient(circle at 85% 25%, var(--bg-spot-2), transparent 35%),
+                radial-gradient(circle at 50% 85%, var(--bg-spot-3), transparent 40%),
                 var(--bg-page);
             font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
             color: var(--text-main);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
         }
 
         /* ── Nav ── */
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 1rem 2rem;
+            padding: 0.85rem 2rem;
             background: var(--glass-bg-strong);
             backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
@@ -68,248 +59,730 @@
         }
 
         .logo {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 800;
-            letter-spacing: -0.03em;
-            color: var(--accent-strong);
-        }
-
-        .logo span {
-            color: var(--text-main);
-        }
-
-        .nav-links {
+            letter-spacing: -0.04em;
             display: flex;
-            gap: 1.5rem;
-            list-style: none;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .nav-links a {
-            text-decoration: none;
+        .logo-icon {
+            width: 32px; height: 32px;
+            background: linear-gradient(135deg, var(--accent), var(--purple));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #fff;
+        }
+
+        .logo-text span { color: var(--accent-strong); }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-badge {
+            background: var(--accent-soft);
+            color: var(--accent-strong);
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 0.3rem 0.75rem;
+            border-radius: 100px;
+        }
+
+        .nav-link {
+            font-size: 0.88rem;
             color: var(--text-muted);
-            font-size: 0.95rem;
+            text-decoration: none;
             font-weight: 500;
             transition: color 0.2s;
         }
 
-        .nav-links a:hover {
-            color: var(--accent);
-        }
+        .nav-link:hover { color: var(--accent); }
 
-        /* ── Hero ── */
-        .hero {
-            text-align: center;
-            max-width: 680px;
-            margin-top: 4rem;
-        }
-
-        .badge {
-            display: inline-block;
-            background: var(--accent-soft);
-            color: var(--accent-strong);
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            padding: 0.35rem 0.85rem;
-            border-radius: 100px;
-            margin-bottom: 1.25rem;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1.15;
-            margin-bottom: 1rem;
-        }
-
-        .hero h1 .highlight {
-            background: linear-gradient(135deg, var(--accent), #6366f1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-            margin-bottom: 2rem;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 0.85rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 12px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-            color: #fff;
-            box-shadow: 0 4px 14px rgba(14, 165, 233, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
-        }
-
-        .btn-secondary {
-            background: var(--glass-bg-strong);
-            color: var(--text-main);
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--glass-shadow-soft);
-        }
-
-        .btn-secondary:hover {
-            background: #fff;
-            transform: translateY(-2px);
-        }
-
-        /* ── Cards ── */
-        .cards {
+        /* ── Main Layout ── */
+        .layout {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.25rem;
-            max-width: 820px;
-            width: 100%;
-            margin-top: 3.5rem;
+            grid-template-columns: 380px 1fr;
+            gap: 1.5rem;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 5.5rem 2rem 2rem;
+            min-height: 100vh;
         }
 
-        .card {
+        /* ── Sidebar ── */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .glass-card {
             background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
             border: 1px solid var(--glass-border);
             border-radius: 18px;
-            padding: 1.5rem;
+            padding: 1.25rem;
             box-shadow: var(--glass-shadow-soft);
-            transition: all 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--glass-shadow);
-            border-color: rgba(14, 165, 233, 0.25);
-        }
-
-        .card-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
+        .card-header {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
+            justify-content: space-between;
             margin-bottom: 1rem;
         }
 
-        .card-icon.blue   { background: rgba(14, 165, 233, 0.12); }
-        .card-icon.purple { background: rgba(99, 102, 241, 0.12); }
-        .card-icon.green  { background: rgba(16, 185, 129, 0.12); }
-
-        .card h3 {
-            font-size: 1.1rem;
+        .card-title {
+            font-size: 0.78rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-faint);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .file-count {
+            background: var(--accent-soft);
+            color: var(--accent-strong);
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 0.15rem 0.55rem;
+            border-radius: 100px;
+        }
+
+        /* ── Theme Cards ── */
+        .theme-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .theme-card {
+            position: relative;
+            padding: 1rem 1.15rem;
+            border-radius: 14px;
+            border: 1.5px solid var(--glass-border);
+            background: var(--glass-bg-strong);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            overflow: hidden;
+        }
+
+        .theme-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            border-radius: 4px 0 0 4px;
+            background: var(--accent);
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .theme-card:hover {
+            border-color: rgba(14, 165, 233, 0.35);
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.1);
+        }
+
+        .theme-card.active {
+            border-color: var(--accent);
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.06), rgba(99, 102, 241, 0.04));
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.08);
+        }
+
+        .theme-card.active::before { opacity: 1; }
+
+        .theme-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.65rem;
+        }
+
+        .theme-card-left {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .theme-icon {
+            width: 40px; height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            flex-shrink: 0;
+        }
+
+        .theme-icon.blue {
+            background: rgba(14, 165, 233, 0.12);
+        }
+
+        .theme-icon.purple {
+            background: rgba(139, 92, 246, 0.12);
+        }
+
+        .theme-card-name {
+            font-size: 0.95rem;
+            font-weight: 700;
             letter-spacing: -0.01em;
         }
 
-        .card p {
-            font-size: 0.9rem;
+        .theme-card-desc {
+            font-size: 0.78rem;
             color: var(--text-faint);
+            margin-top: 0.15rem;
+        }
+
+        .active-badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.55rem;
+            border-radius: 6px;
+            background: rgba(16, 185, 129, 0.12);
+            color: var(--success);
+            display: none;
+        }
+
+        .theme-card.active .active-badge { display: inline-block; }
+
+        /* Path display */
+        .theme-path-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.6rem;
+            padding: 0.5rem 0.7rem;
+            background: rgba(15, 23, 42, 0.04);
+            border-radius: 8px;
+            border: 1px solid rgba(148, 163, 184, 0.14);
+        }
+
+        .path-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-faint);
+            flex-shrink: 0;
+        }
+
+        .path-text {
+            font-size: 0.8rem;
+            font-family: "JetBrains Mono", "Cascadia Code", "Fira Code", Consolas, monospace;
+            color: var(--accent-strong);
+            font-weight: 600;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            flex: 1;
+        }
+
+        .copy-btn {
+            flex-shrink: 0;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid var(--glass-border);
+            background: #fff;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .copy-btn:hover {
+            background: var(--accent-soft);
+            color: var(--accent-strong);
+            border-color: var(--accent);
+        }
+
+        .copy-btn.copied {
+            background: rgba(16, 185, 129, 0.12);
+            color: var(--success);
+            border-color: var(--success);
+        }
+
+        /* ── Instructions ── */
+        .instructions ol {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding-left: 1.1rem;
+            line-height: 2.1;
+        }
+
+        .instructions code {
+            background: var(--accent-soft);
+            padding: 0.12em 0.45em;
+            border-radius: 5px;
+            font-size: 0.82rem;
+            font-family: "JetBrains Mono", "Cascadia Code", monospace;
+            color: var(--accent-strong);
+            font-weight: 600;
+        }
+
+        .vscode-setting {
+            margin-top: 0.85rem;
+            padding: 0.85rem;
+            background: rgba(15, 23, 42, 0.04);
+            border: 1px solid rgba(148, 163, 184, 0.14);
+            border-radius: 10px;
+            font-family: "JetBrains Mono", "Cascadia Code", monospace;
+            font-size: 0.78rem;
+            line-height: 1.7;
+            color: var(--text-main);
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        /* ── Preview Panel ── */
+        .preview-panel {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            box-shadow: var(--glass-shadow);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: sticky;
+            top: 5rem;
+            height: calc(100vh - 6.5rem);
+        }
+
+        .preview-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1.25rem;
+            border-bottom: 1px solid var(--glass-border);
+            background: var(--glass-bg-strong);
+            flex-shrink: 0;
+        }
+
+        .toolbar-left {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-red    { background: #ff5f57; }
+        .dot-yellow { background: #febc2e; }
+        .dot-green  { background: #28c840; }
+
+        .toolbar-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-faint);
+            margin-left: 0.6rem;
+        }
+
+        .toolbar-theme {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--accent-strong);
+            background: var(--accent-soft);
+            padding: 0.25rem 0.7rem;
+            border-radius: 8px;
+        }
+
+        #preview-frame {
+            flex: 1;
+            border: none;
+            width: 100%;
+            background: #fff;
+        }
+
+        /* ── Empty State ── */
+        .empty-preview {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            gap: 0.75rem;
+            color: var(--text-faint);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .empty-icon { font-size: 3.5rem; }
+
+        .empty-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        .empty-desc {
+            font-size: 0.88rem;
+            max-width: 280px;
             line-height: 1.6;
         }
 
-        /* ── Footer ── */
-        footer {
-            margin-top: 4rem;
-            padding: 1.5rem;
-            text-align: center;
-            color: var(--text-faint);
-            font-size: 0.85rem;
-        }
-
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
         /* ── Responsive ── */
-        @media (max-width: 600px) {
-            body { padding: 1rem; }
-            nav { padding: 0.85rem 1.25rem; }
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1rem; }
-            .cards { grid-template-columns: 1fr; margin-top: 2.5rem; }
+        @media (max-width: 900px) {
+            .layout {
+                grid-template-columns: 1fr;
+                padding: 5rem 1rem 1.5rem;
+            }
+            .preview-panel {
+                position: static;
+                height: 520px;
+            }
+            nav { padding: 0.75rem 1rem; }
+            .nav-link { display: none; }
         }
+
+        /* ── Animations ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .theme-card {
+            animation: fadeUp 0.4s ease backwards;
+        }
+
+        .theme-card:nth-child(2) { animation-delay: 0.1s; }
     </style>
 </head>
 <body>
 
-    <!-- Nav -->
-    <nav>
-        <div class="logo"><span>My</span>App</div>
-        <ul class="nav-links">
-            <li><a href="#features">Features</a></li>
-            <li><a href="#docs">Docs</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
-    </nav>
+<!-- ── Nav ── -->
+<nav>
+    <div class="logo">
+        <div class="logo-icon">🎨</div>
+        <div class="logo-text"><span>MD</span> Theme Picker</div>
+    </div>
+    <div class="nav-right">
+        <a href="https://github.com" target="_blank" class="nav-link">⭐ GitHub</a>
+        <div class="nav-badge">v1.0</div>
+    </div>
+</nav>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="badge">✨ v1.0 — Now Live</div>
-        <h1>Welcome to <span class="highlight">MyApp</span></h1>
+<!-- ── Layout ── -->
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <!-- Theme List -->
+        <div class="glass-card">
+            <div class="card-header">
+                <div class="card-title">📂 Available Themes</div>
+                <div class="file-count">2</div>
+            </div>
+
+            <div class="theme-cards">
+
+                <!-- Theme 1 -->
+                <div class="theme-card" id="card-1" onclick="selectTheme(1)">
+                    <div class="theme-card-top">
+                        <div class="theme-card-left">
+                            <div class="theme-icon blue">🧊</div>
+                            <div>
+                                <div class="theme-card-name">Glass Theme</div>
+                                <div class="theme-card-desc">Light frosted glass — clean & modern</div>
+                            </div>
+                        </div>
+                        <span class="active-badge">Active</span>
+                    </div>
+                    <div class="theme-path-row">
+                        <span class="path-label">Path</span>
+                        <span class="path-text" id="path-1">theme/css/glass-theme.css</span>
+                        <button class="copy-btn" onclick="event.stopPropagation(); copyPath(1);" id="copy-1">
+                            📋 Copy
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Theme 2 -->
+                <div class="theme-card" id="card-2" onclick="selectTheme(2)">
+                    <div class="theme-card-top">
+                        <div class="theme-card-left">
+                            <div class="theme-icon purple">✨</div>
+                            <div>
+                                <div class="theme-card-name">Glass Theme 2</div>
+                                <div class="theme-card-desc">Enhanced glass — refined typography</div>
+                            </div>
+                        </div>
+                        <span class="active-badge">Active</span>
+                    </div>
+                    <div class="theme-path-row">
+                        <span class="path-label">Path</span>
+                        <span class="path-text" id="path-2">theme/css/glass-theme2.css</span>
+                        <button class="copy-btn" onclick="event.stopPropagation(); copyPath(2);" id="copy-2">
+                            📋 Copy
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- VS Code Instructions -->
+        <div class="glass-card instructions">
+            <div class="card-header">
+                <div class="card-title">⚙️ VS Code Setup</div>
+            </div>
+            <ol>
+                <li>Click a <strong>theme card</strong> to preview</li>
+                <li>Click <code>📋 Copy</code> to copy the CSS path</li>
+                <li>Open VS Code → <code>settings.json</code></li>
+                <li>Paste the path in the setting below</li>
+            </ol>
+            <div class="vscode-setting">// settings.json
+{
+  "markdown.styles": [
+    "<span id="vscode-path">theme/css/glass-theme.css</span>"
+  ]
+}</div>
+        </div>
+
+    </aside>
+
+    <!-- Preview Panel -->
+    <div class="preview-panel">
+        <div class="preview-toolbar">
+            <div class="toolbar-left">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <span class="toolbar-title">Markdown Preview</span>
+            </div>
+            <span class="toolbar-theme" id="preview-label">Select a theme</span>
+        </div>
+        <iframe id="preview-frame"></iframe>
+    </div>
+
+</div>
+
+<script>
+    // ── Hardcoded Themes ──────────────────────────────────────
+    const THEMES = {
+        1: {
+            name : "Glass Theme",
+            file : "glass-theme.css",
+            path : "theme/css/glass-theme.css",
+        },
+        2: {
+            name : "Glass Theme 2",
+            file : "glass-theme2.css",
+            path : "theme/css/glass-theme2.css",
+        },
+    };
+
+    // ── Sample Markdown HTML ──────────────────────────────────
+    const MD_PREVIEW = `
+        <h1>🧊 Heading 1 — Theme Preview</h1>
         <p>
-            A clean and modern starting point for your next project.
-            Built with simplicity, speed, and beautiful design in mind.
+            This is a <strong>Markdown preview</strong> rendered with the selected
+            CSS theme. Use it to test how your <code>.md</code> files will look
+            in VS Code.
         </p>
-        <div class="btn-group">
-            <a href="#" class="btn btn-primary">🚀 Get Started</a>
-            <a href="#" class="btn btn-secondary">📖 Read Docs</a>
-        </div>
-    </section>
 
-    <!-- Feature Cards -->
-    <section class="cards" id="features">
-        <div class="card">
-            <div class="card-icon blue">⚡</div>
-            <h3>Lightning Fast</h3>
-            <p>Optimized for performance with minimal overhead and instant load times.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon purple">🎨</div>
-            <h3>Beautiful Design</h3>
-            <p>Modern glass UI with clean typography and smooth interactions.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon green">🔒</div>
-            <h3>Secure & Reliable</h3>
-            <p>Built with best practices to keep your data safe and your app stable.</p>
-        </div>
-    </section>
+        <h2>Typography</h2>
+        <p>
+            Regular paragraph with <strong>bold</strong>, <em>italic</em>,
+            <a href="#">links</a>, and <code>inline code</code>.
+        </p>
 
-    <!-- Footer -->
-    <footer>
-        Made with ❤️ — <a href="#">MyApp</a> &copy; 2025
-    </footer>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+
+        <blockquote>
+            <p>
+                💡 <strong>Pro tip:</strong> This is a blockquote. Great for
+                callouts, tips, and important notes in your documentation.
+            </p>
+        </blockquote>
+
+        <h2>Code Block</h2>
+        <pre><code>// JavaScript Example
+function greet(name) {
+    return \`Hello, \${name}!\`;
+}
+
+const themes = ["glass-theme", "glass-theme2"];
+themes.forEach(t => console.log(t));</code></pre>
+
+        <h2>Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Theme</th>
+                    <th>Style</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>glass-theme.css</td>
+                    <td>Light Frosted</td>
+                    <td>✅ Ready</td>
+                </tr>
+                <tr>
+                    <td>glass-theme2.css</td>
+                    <td>Enhanced Glass</td>
+                    <td>✅ Ready</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Lists</h2>
+        <ul>
+            <li>Unordered item one</li>
+            <li>Item with <code>inline code</code></li>
+            <li>Third item here</li>
+        </ul>
+
+        <ol>
+            <li>First ordered item</li>
+            <li>Second ordered item</li>
+            <li>Third ordered item</li>
+        </ol>
+
+        <h2>Horizontal Rule</h2>
+        <hr>
+
+        <p><em>End of preview — select a theme from the sidebar to see it styled.</em></p>
+    `;
+
+    // ── Build base URL dynamically ────────────────────────────
+    function getBaseUrl() {
+        const loc = window.location;
+        const pathParts = loc.pathname.split("/");
+        pathParts.pop(); // remove index.html or trailing
+        return loc.origin + pathParts.join("/") + "/";
+    }
+
+    // ── Select Theme ──────────────────────────────────────────
+    let activeTheme = null;
+
+    function selectTheme(id) {
+        const theme   = THEMES[id];
+        const baseUrl = getBaseUrl();
+        const fullUrl = baseUrl + theme.path;
+
+        // Update active states
+        activeTheme = id;
+        document.querySelectorAll(".theme-card").forEach(c => c.classList.remove("active"));
+        document.getElementById(`card-${id}`).classList.add("active");
+
+        // Update toolbar label
+        document.getElementById("preview-label").textContent = theme.file;
+
+        // Update VS Code settings hint
+        document.getElementById("vscode-path").textContent = fullUrl;
+
+        // Update full path display
+        document.getElementById(`path-${id}`).textContent = fullUrl;
+
+        // Also update the other card path to full URL
+        Object.keys(THEMES).forEach(key => {
+            document.getElementById(`path-${key}`).textContent =
+                baseUrl + THEMES[key].path;
+        });
+
+        // Build preview iframe
+        const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="${fullUrl}">
+    <style>
+        body {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    ${MD_PREVIEW}
+</body>
+</html>`;
+
+        document.getElementById("preview-frame").srcdoc = html;
+    }
+
+    // ── Copy Path ─────────────────────────────────────────────
+    function copyPath(id) {
+        const baseUrl = getBaseUrl();
+        const fullUrl = baseUrl + THEMES[id].path;
+
+        navigator.clipboard.writeText(fullUrl).then(() => {
+            const btn = document.getElementById(`copy-${id}`);
+            btn.classList.add("copied");
+            btn.innerHTML = "✅ Copied!";
+
+            setTimeout(() => {
+                btn.classList.remove("copied");
+                btn.innerHTML = "📋 Copy";
+            }, 2000);
+        });
+    }
+
+    // ── Init: show full URLs on load ──────────────────────────
+    window.addEventListener("DOMContentLoaded", () => {
+        const baseUrl = getBaseUrl();
+        Object.keys(THEMES).forEach(key => {
+            document.getElementById(`path-${key}`).textContent =
+                baseUrl + THEMES[key].path;
+        });
+
+        // Update VS Code path
+        document.getElementById("vscode-path").textContent =
+            baseUrl + THEMES[1].path;
+
+        // Show empty state in iframe
+        document.getElementById("preview-frame").srcdoc = `
+            <html>
+            <body style="
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+                justify-content:center;
+                height:100vh;
+                margin:0;
+                font-family:system-ui,sans-serif;
+                color:#94a3b8;
+                background:#fafbfc;
+                gap:0.8rem;
+                text-align:center;
+                padding:2rem;
+            ">
+                <div style="font-size:3.5rem">🎨</div>
+                <div style="font-size:1.15rem;font-weight:700;color:#64748b">
+                    Select a theme to preview
+                </div>
+                <div style="font-size:0.88rem;max-width:280px;line-height:1.6">
+                    Click on a theme card from the sidebar to see how your
+                    Markdown files will look.
+                </div>
+            </body>
+            </html>`;
+    });
+</script>
 
 </body>
 </html>
