@@ -1,0 +1,82 @@
+/* Glass Admin Light Theme for VS Code Markdown */
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.5);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    --glass-blur: blur(10px);
+    --accent-color: #38bff830;
+    --text-main: #2d3748;
+}
+
+body {
+    /* background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%); */
+    /* background: linear-gradient(#fff,#d8d8d8,#fff,#fff,#c6c6c6); */
+    /* background: linear-gradient(#CCC, #FFF, #FFF); */
+    background: #F8FAFC;
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 30px;
+}
+
+/* Glass Card effect for Headings */
+h1, h2, h3 {
+    color: var(--text-main);
+    padding-bottom: 0.3em;
+    border-bottom: 2px solid var(--glass-border);
+    font-weight: 600;
+}
+
+/* Glass effect for Code Blocks */
+pre {
+    background: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    box-shadow: var(--glass-shadow);
+}
+
+/* Glass effect for Code Blocks */
+code {
+    background: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    /* border: 1px solid var(--glass-border); */
+    /* border-radius: 12px; */
+    /* box-shadow: var(--glass-shadow); */
+}
+
+/* Glass effect for Blockquotes */
+blockquote {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: var(--glass-blur);
+    border-left: 5px solid var(--accent-color);
+    border-radius: 0 12px 12px 0;
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    color: #4a5568;
+}
+
+/* Tables in Glass style */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--glass-shadow);
+    border: 1px solid var(--glass-border);
+}
+
+th {
+    background-color: rgba(56, 189, 248, 0.1);
+    color: var(--text-main);
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    border-top: 1px solid var(--glass-border);
+}

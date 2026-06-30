@@ -1,0 +1,280 @@
+/* Frosted Glass Markdown Theme for VS Code */
+:root {
+    --bg-page: #f8fafc;
+    --bg-spot-1: rgba(14, 165, 233, 0.10);
+    --bg-spot-2: rgba(99, 102, 241, 0.08);
+
+    --glass-bg: rgba(255, 255, 255, 0.72);
+    --glass-bg-strong: rgba(255, 255, 255, 0.86);
+    --glass-border: rgba(148, 163, 184, 0.22);
+    --glass-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    --glass-shadow-soft: 0 6px 18px rgba(15, 23, 42, 0.05);
+    --glass-blur: saturate(180%) blur(14px);
+
+    --accent: #0ea5e9;
+    --accent-strong: #2563eb;
+    --accent-soft: rgba(14, 165, 233, 0.12);
+
+    --text-main: #1e293b;
+    --text-muted: #475569;
+    --text-faint: #64748b;
+    --code-text: #0f172a;
+    --rule: rgba(148, 163, 184, 0.24);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(circle at top left, var(--bg-spot-1), transparent 32%),
+        radial-gradient(circle at top right, var(--bg-spot-2), transparent 28%),
+        var(--bg-page);
+    color: var(--text-main);
+    font-family: Inter, "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 36px 42px 64px;
+}
+
+/* Typography */
+p,
+ul,
+ol,
+blockquote,
+pre,
+table {
+    margin: 1rem 0 1.25rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-main);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    margin: 1.6em 0 0.7em;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2.15rem;
+    padding: 0.85rem 1rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.66));
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+}
+
+h2 {
+    font-size: 1.65rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--rule);
+}
+
+h3 {
+    font-size: 1.3rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+h4 {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+h5,
+h6 {
+    color: var(--text-faint);
+}
+
+a {
+    color: var(--accent-strong);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(37, 99, 235, 0.25);
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    background: linear-gradient(transparent 72%, var(--accent-soft) 0);
+}
+
+strong {
+    color: #0f172a;
+}
+
+em {
+    color: var(--text-muted);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    margin: 2rem 0;
+    background: linear-gradient(90deg, transparent, var(--rule), transparent);
+}
+
+/* Inline code */
+code {
+    background: rgba(14, 165, 233, 0.08) !important;
+    color: var(--code-text);
+    border: 1px solid rgba(14, 165, 233, 0.14);
+    border-radius: 8px;
+    padding: 0.18em 0.45em;
+    font-size: 0.92em;
+    font-family: "JetBrains Mono", "Cascadia Code", "Fira Code", Consolas, monospace;
+}
+
+/* Code blocks */
+pre {
+    background: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: var(--glass-shadow-soft);
+    padding: 1rem 1.15rem;
+    overflow-x: auto;
+}
+
+pre code {
+    background: transparent !important;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font-size: 0.95em;
+}
+
+/* Blockquotes */
+blockquote {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.56));
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 16px 16px 0;
+    padding: 1rem 1.25rem;
+    color: var(--text-muted);
+    box-shadow: var(--glass-shadow-soft);
+}
+
+blockquote > :first-child {
+    margin-top: 0;
+}
+
+blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+/* Lists */
+ul,
+ol {
+    padding-left: 1.4rem;
+}
+
+li {
+    margin: 0.35rem 0;
+}
+
+li::marker {
+    color: var(--accent-strong);
+    font-weight: 700;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--accent);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--glass-shadow-soft);
+}
+
+th {
+    text-align: left;
+    padding: 0.9rem 1rem;
+    background: linear-gradient(180deg, rgba(14, 165, 233, 0.12), rgba(14, 165, 233, 0.06));
+    color: var(--text-main);
+    font-weight: 700;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+td {
+    padding: 0.85rem 1rem;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+tbody tr:first-child td {
+    border-top: none;
+}
+
+tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+tr:hover td {
+    background: rgba(14, 165, 233, 0.06);
+}
+
+/* Media */
+img {
+    display: block;
+    max-width: 100%;
+    margin: 1.25rem auto;
+    border-radius: 16px;
+    box-shadow: var(--glass-shadow-soft);
+}
+
+kbd {
+    background: var(--glass-bg-strong);
+    border: 1px solid var(--glass-border);
+    border-bottom-color: rgba(100, 116, 139, 0.32);
+    border-radius: 8px;
+    padding: 0.15rem 0.45rem;
+    font-size: 0.9em;
+    box-shadow: 0 2px 0 rgba(15, 23, 42, 0.06);
+}
+
+details {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    padding: 0.85rem 1rem;
+    box-shadow: var(--glass-shadow-soft);
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+::selection {
+    background: rgba(14, 165, 233, 0.18);
+}
