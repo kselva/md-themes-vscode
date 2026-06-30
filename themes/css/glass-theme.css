@@ -13,6 +13,8 @@ body {
     /* background: linear-gradient(#fff,#d8d8d8,#fff,#fff,#c6c6c6); */
     /* background: linear-gradient(#CCC, #FFF, #FFF); */
     background: #F8FAFC;
+    font-family: Inter, "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 13px;
     color: var(--text-main);
     line-height: 1.6;
     padding: 30px;
